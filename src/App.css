@@ -1,0 +1,30 @@
+/* 其它样式保持不变，只贴关键部分 */
+
+.wheel {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* 通过 .spinning 控制 transition */
+.wheel.spinning {
+  transition: transform 4s cubic-bezier(0.17,0.67,0.83,0.67);
+}
+
+/* label 保持之前的居中逻辑 */
+.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  padding: 2px 6px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  transform-origin: center center;
+}
