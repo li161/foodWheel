@@ -8,7 +8,7 @@ export default function App() {
     <Router>
       <div style={{ display:"flex", height:"100vh"}}>
         {/* 左侧菜单 */}
-        <div style={{ width: "100px", background: "#f0f0f0", padding: "20px", display: "flex",
+        <div style={{ width: "5rem", background: "#f0f0f0", padding: "20px", display: "flex",
           flexDirection: "column", gap: "15px",
         }}>
           <h2 style={{color:'#ecf0f1'}}>菜单</h2>

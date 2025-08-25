@@ -32,9 +32,10 @@ export default function FoodWheel() {
   return (
     <div
       style={{
+        width: "100%",
         maxWidth: "1200px",
         margin: "0 auto",
-        padding: "20px",
+        padding: "2vw",
       }}
     >
       <h1
@@ -42,6 +43,7 @@ export default function FoodWheel() {
           textAlign: "center",
           marginTop: "10px",
           color: "#333",
+          fontSize: "clamp(20px, 4vw, 32px)", // 自适应标题
         }}
       >
         午餐大转盘
@@ -59,10 +61,11 @@ export default function FoodWheel() {
         {/* Left Column - Wheel */}
         <div
           style={{
-            flex: "0 1 auto",
+            flex: "1 1 300px", // 宽度自适应，最小300px
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            maxWidth: "600px",
           }}
         >
           <Wheel ref={wheelRef} prizes={foods} />
@@ -71,14 +74,15 @@ export default function FoodWheel() {
             disabled={wheelRef.current?.isSpinning}
             style={{
               marginTop: "20px",
-              padding: "12px 24px",
-              fontSize: "18px",
+              padding: "clamp(8px, 2vw, 14px) clamp(16px, 4vw, 28px)",
+              fontSize: "clamp(14px, 2vw, 18px)",
               backgroundColor: "#4CAF50",
               color: "white",
               border: "none",
               borderRadius: "6px",
               cursor: "pointer",
               boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
+              width: "fit-content",
             }}
           >
             启动
@@ -88,9 +92,8 @@ export default function FoodWheel() {
         {/* Right Column - Food List */}
         <div
           style={{
-            flex: "0 1 auto",
-            minWidth: "300px",
-            maxWidth: "400px",
+            flex: "1 1 300px", // 自适应宽度
+            maxWidth: "500px",
             alignSelf: "flex-start",
           }}
         >
@@ -100,6 +103,7 @@ export default function FoodWheel() {
               color: "#333",
               borderBottom: "2px solid #4CAF50",
               paddingBottom: "10px",
+              fontSize: "clamp(16px, 2.5vw, 22px)",
             }}
           >
             食物列表
@@ -107,7 +111,7 @@ export default function FoodWheel() {
           <div
             style={{
               backgroundColor: "#f9f9f9",
-              padding: "20px",
+              padding: "clamp(12px, 2vw, 20px)",
               borderRadius: "8px",
               boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
             }}
