@@ -11,8 +11,15 @@ export const parseMeatDishMarkdown = (markdownContent, fileName) => {
     name: foodName,
     ingredients: [],
     recipe: [],
-    taste: ''
+    taste: '',
+    difficulty: ''
   };
+  
+  // 提取烹饪难度信息
+  const difficultyMatch = markdownContent.match(/预估烹饪难度：([★☆]+)/);
+  if (difficultyMatch && difficultyMatch[1]) {
+    foodDetail.difficulty = difficultyMatch[1];
+  }
   
   // Parse each section
   sections.forEach(section => {

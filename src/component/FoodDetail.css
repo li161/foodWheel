@@ -1,0 +1,48 @@
+/* FoodDetail组件的动画样式 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 平滑滚动 */
+.food-detail-modal {
+  scroll-behavior: smooth;
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+  .food-detail-content {
+    margin: 20px 10px;
+    max-width: calc(100% - 20px);
+  }
+  
+  .tab-button {
+    font-size: 13px !important;
+    padding: 10px 8px !important;
+  }
+  
+  .ingredient-item {
+    padding: 10px !important;
+    font-size: 14px !important;
+  }
+  
+  .step-content {
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
+}
